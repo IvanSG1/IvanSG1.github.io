@@ -165,6 +165,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-从零开始的c-生活" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/09/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E7%94%9F%E6%B4%BB/">从零开始的c++生活</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/09/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E7%94%9F%E6%B4%BB/" class="archive-article-date">
+  	<time datetime="2021-10-09T10:26:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-c-基本语法"><a href="#1-c-基本语法" class="headerlink" title="1.c++基本语法"></a>1.c++基本语法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span>   <span class="comment">//头文件</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std; <span class="comment">//告诉编译器使用std命名空间</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;hello world&quot;</span>; <span class="comment">//输出hello world</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-c-注释"><a href="#2-c-注释" class="headerlink" title="2.c++注释"></a>2.c++注释</h1><p>//   一般用于单行注释</p>
+<p>/* …*/一般用于多行注释</p>
+<h1 id="3-c-基本数据类型"><a href="#3-c-基本数据类型" class="headerlink" title="3.c++基本数据类型"></a>3.c++基本数据类型</h1><p>相比于c语言多了一个wchar_t（宽字符型）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> cout &lt;&lt; <span class="string">&quot;type: \t\t&quot;</span> &lt;&lt; <span class="string">&quot;************size**************&quot;</span>&lt;&lt; endl;  <span class="comment">//endl会在前面输出的每一行都插入一个换行符</span></span><br><span class="line"><span class="comment">//&lt;&lt;运算符可以用于向屏幕传递多个值</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><p>如果一个变量只有几种可能的值，可以定义为枚举(enumeration)类型。所谓”枚举”是指将变量的值一一列举出来，变量的值只能在列举出来的值的范围内。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, green, blue &#125; c;</span><br><span class="line">c = blue;</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认情况下，第一个名称的值为 0，第二个名称的值为 1，第三个名称的值为 2，以此类推。但是，您也可以给名称赋予一个特殊的值，只需要添加一个初始值即可。例如，在下面的枚举中，green 的值为 5。</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, green=<span class="number">5</span>, blue &#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>在函数声明时，提供一个函数名，而函数的实际定义则可以在任何地方进行。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 函数调用</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="built_in">func</span>();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 函数定义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/09/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E7%94%9F%E6%B4%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-leetcode学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -570,6 +650,275 @@
 
 
   
+    <article id="post-算法设计与分析复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="算法设计与分析复习"><a href="#算法设计与分析复习" class="headerlink" title="算法设计与分析复习"></a>算法设计与分析复习</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p><img src="https://images2018.cnblogs.com/blog/849589/201804/849589-20180402133438219-1946132192.png" alt="img"></p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>在待排序的元素中，假设前n-1个元素已有序，现将第n个元素插入到前面已经排好的序列中，使得前n个元素有序。按照此法对所有元素进行插入，直到整个序列有序。</p>
+<p> 但我们并不能确定待排元素中究竟哪一部分是有序的，所以我们一开始只能认为第一个元素是有序的，依次将其后面的元素插入到这个有序序列中来，直到整个序列有序为止。</p>
+<p><img src="https://img-blog.csdnimg.cn/20210509184956602.gif" alt="在这里插入图片描述"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> end = i;<span class="comment">//记录有序序列的最后一个元素的下标</span></span><br><span class="line">		<span class="keyword">int</span> tmp = a[end + <span class="number">1</span>];<span class="comment">//待插入的元素</span></span><br><span class="line">		<span class="keyword">while</span> (end &gt;= <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (tmp &lt; a[end])<span class="comment">//还需继续比较</span></span><br><span class="line">			&#123;</span><br><span class="line">				a[end + <span class="number">1</span>] = a[end];</span><br><span class="line">				end--;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span><span class="comment">//找到应插入的位置</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		a[end + <span class="number">1</span>] = tmp;</span><br><span class="line">		<span class="comment">//代码执行到此位置有两种情况:</span></span><br><span class="line">		<span class="comment">//1.待插入元素找到应插入位置（break跳出循环到此）。</span></span><br><span class="line">		<span class="comment">//2.待插入元素比当前有序序列中的所有元素都小（while循环结束后到此）。</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p><img src="https://img-blog.csdnimg.cn/20210509190237603.gif" alt="img"></p>
+<p>我们用序列长度的一半作为第一次排序时gap的值，此时相隔距离为5的元素被分为一组（共分了5组，每组有2个元素），然后分别对每一组进行直接插入排序。</p>
+<p>gap的值折半，此时相隔距离为2的元素被分为一组（共分了2组，每组有5个元素），然后再分别对每一组进行直接插入排序。</p>
+<p>gap的值再次减半，此时gap减为1，即整个序列被分为一组，进行一次直接插入排序。</p>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p> 选择排序，即每次从待排序列中选出一个最小值，然后放在序列的起始位置，直到全部待排数据排完即可。</p>
+<p><img src="https://img-blog.csdnimg.cn/20210509190545640.gif" alt="在这里插入图片描述"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (a[start] &lt; a[min])</span><br><span class="line">				min = start;<span class="comment">//最小值的下标更新</span></span><br><span class="line">			start++;</span><br><span class="line">		&#125;</span><br><span class="line">		Swap(&amp;a[i], &amp;a[min]);<span class="comment">//最小值与参与该趟选择排序的第一个元素交换位置</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//堆的向下调整算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AdjustDown</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n, <span class="keyword">int</span> root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> parent = root;</span><br><span class="line">	<span class="keyword">int</span> child = <span class="number">2</span> * parent + <span class="number">1</span>;<span class="comment">//假设左孩子较大</span></span><br><span class="line">	<span class="keyword">while</span> (child &lt; n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (child + <span class="number">1</span> &lt; n&amp;&amp;a[child + <span class="number">1</span>] &gt; a[child])<span class="comment">//右孩子存在，并且比左孩子大</span></span><br><span class="line">		&#123;</span><br><span class="line">			child++;<span class="comment">//左右孩子的较大值</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (a[child] &gt; a[parent])</span><br><span class="line">		&#123;</span><br><span class="line">			Swap(&amp;a[child], &amp;a[parent]);</span><br><span class="line">			parent = child;</span><br><span class="line">			child = <span class="number">2</span> * parent + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span><span class="comment">//已成堆</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//大根堆</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//堆排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//排升序，建大堆</span></span><br><span class="line">	<span class="comment">//从第一个非叶子结点开始向下调整，一直到根</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = (n - <span class="number">1</span> - <span class="number">1</span>) / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		AdjustDown(a, n, i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> end = n - <span class="number">1</span>;<span class="comment">//记录堆的最后一个数据的下标</span></span><br><span class="line">	<span class="keyword">while</span> (end)</span><br><span class="line">	&#123;</span><br><span class="line">		Swap(&amp;a[<span class="number">0</span>], &amp;a[end]);<span class="comment">//将堆顶的数据和堆的最后一个数据交换</span></span><br><span class="line">		AdjustDown(a, end, <span class="number">0</span>);<span class="comment">//对根进行一次向下调整</span></span><br><span class="line">		end--;<span class="comment">//堆的最后一个数据的下标减一</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><img src="https://img-blog.csdnimg.cn/20210509190446264.gif" alt="在这里插入图片描述"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//冒泡排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (end = n - <span class="number">1</span>; end &gt;= <span class="number">0</span>; end--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> exchange = <span class="number">0</span>;<span class="comment">//记录该趟冒泡排序是否进行过交换</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; end; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i]&gt;a[i + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				Swap(&amp;a[i], &amp;a[i + <span class="number">1</span>]);</span><br><span class="line">				exchange = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (exchange == <span class="number">0</span>)<span class="comment">//该趟冒泡排序没有进行过交换，已有序</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序（Hoare版本）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort1</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (begin &gt;= end)<span class="comment">//当只有一个数据或是序列不存在时，不需要进行操作</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">int</span> left = begin;<span class="comment">//L</span></span><br><span class="line">	<span class="keyword">int</span> right = end;<span class="comment">//R</span></span><br><span class="line">	<span class="keyword">int</span> keyi = left;<span class="comment">//key的下标</span></span><br><span class="line">	<span class="keyword">while</span> (left &lt; right)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//right先走，找小</span></span><br><span class="line">		<span class="keyword">while</span> (left &lt; right&amp;&amp;a[right] &gt;= a[keyi])</span><br><span class="line">		&#123;</span><br><span class="line">			right--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//left后走，找大</span></span><br><span class="line">		<span class="keyword">while</span> (left &lt; right&amp;&amp;a[left] &lt;= a[keyi])</span><br><span class="line">		&#123;</span><br><span class="line">			left++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (left &lt; right)<span class="comment">//交换left和right的值</span></span><br><span class="line">		&#123;</span><br><span class="line">			Swap(&amp;a[left], &amp;a[right]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> meeti = left;<span class="comment">//L和R的相遇点</span></span><br><span class="line">	Swap(&amp;a[keyi], &amp;a[meeti]);<span class="comment">//交换key和相遇点的值</span></span><br><span class="line"></span><br><span class="line">	QuickSort1(a, begin, meeti - <span class="number">1</span>);<span class="comment">//key的左序列进行此操作</span></span><br><span class="line">	QuickSort1(a, meeti + <span class="number">1</span>, end);<span class="comment">//key的右序列进行此操作</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p><img src="https://img-blog.csdnimg.cn/20210509190848853.gif" alt="在这里插入图片描述"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//归并排序（子函数）</span></span><br><span class="line"><span class="keyword">void</span> _MergeSort(<span class="keyword">int</span>* a, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span>* tmp)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (left &gt;= right)<span class="comment">//归并结束条件：当只有一个数据或是序列不存在时，不需要再分解</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//中间下标</span></span><br><span class="line">	_MergeSort(a, left, mid, tmp);<span class="comment">//对左序列进行归并</span></span><br><span class="line">	_MergeSort(a, mid + <span class="number">1</span>, right, tmp);<span class="comment">//对右序列进行归并</span></span><br><span class="line">	<span class="keyword">int</span> begin1 = left, end1 = mid;</span><br><span class="line">	<span class="keyword">int</span> begin2 = mid + <span class="number">1</span>, end2 = right;</span><br><span class="line">	<span class="comment">//将两段子区间进行归并，归并结果放在tmp中</span></span><br><span class="line">	<span class="keyword">int</span> i = left;</span><br><span class="line">	<span class="keyword">while</span> (begin1 &lt;= end1&amp;&amp;begin2 &lt;= end2)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//将较小的数据优先放入tmp</span></span><br><span class="line">		<span class="keyword">if</span> (a[begin1] &lt; a[begin2])</span><br><span class="line">			tmp[i++] = a[begin1++];</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			tmp[i++] = a[begin2++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//当遍历完其中一个区间，将另一个区间剩余的数据直接放到tmp的后面</span></span><br><span class="line">	<span class="keyword">while</span> (begin1 &lt;= end1)</span><br><span class="line">		tmp[i++] = a[begin1++];</span><br><span class="line">	<span class="keyword">while</span> (begin2 &lt;= end2)</span><br><span class="line">		tmp[i++] = a[begin2++];</span><br><span class="line">	<span class="comment">//归并完后，拷贝回原数组</span></span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (j = left; j &lt;= right; j++)</span><br><span class="line">		a[j] = tmp[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//归并排序（主体函数）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span>* tmp = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);<span class="comment">//申请一个与原数组大小相同的空间</span></span><br><span class="line">	<span class="keyword">if</span> (tmp == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;malloc fail\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	_MergeSort(a, <span class="number">0</span>, n - <span class="number">1</span>, tmp);<span class="comment">//归并排序</span></span><br><span class="line">	<span class="built_in">free</span>(tmp);<span class="comment">//释放空间</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/04/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-verilog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="verilog"><a href="#verilog" class="headerlink" title="verilog"></a>verilog</h1><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">基本组成：</span><br><span class="line">（<span class="number">1</span>）<span class="keyword">module</span>于<span class="keyword">endmodule</span>相当于括号，任何一个功能模块的描述都必须放在括号中，<span class="keyword">module</span>后紧跟着的是为改电路模块取得名称，模块名右边的括号及其内容被称为“端口表”，括号中内容就是此模块的所有端口信号名。</span><br><span class="line"> （<span class="number">2</span>）<span class="keyword">input</span>和<span class="keyword">output</span>等关键词引导的对模块外部端口描述的语句</span><br><span class="line"> （<span class="number">3</span>）以关键词<span class="keyword">assign</span>引导的赋值语句，用于描述模块的逻辑功能和电路结构</span><br><span class="line">     </span><br><span class="line"> <span class="keyword">module</span> 模块名（模块端口名）</span><br><span class="line">     模块端口和模块功能描述</span><br><span class="line"> <span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="1-数值表示"><a href="#1-数值表示" class="headerlink" title="1.数值表示"></a>1.数值表示</h2><h3 id="数值种类"><a href="#数值种类" class="headerlink" title="数值种类"></a>数值种类</h3><p>0：逻辑0或 假 </p>
+<p>1：逻辑1或 真</p>
+<p>x或X：未知</p>
+<p>z或Z：高阻</p>
+<h3 id="整数数值表示方法"><a href="#整数数值表示方法" class="headerlink" title="整数数值表示方法"></a>整数数值表示方法</h3><p>十进制(‘d 或 ‘D)，十六进制(‘h 或 ‘H)，二进制（’b 或 ‘B），八进制（’o 或 ‘O）</p>
+<p>counter = 位宽 ‘ 进制 + 数值</p>
+<p>若没有位宽则默认为32bit，若没有进制则默认为十进制</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">等效：</span><br><span class="line">counter <span class="number">&#x27;d100</span>;</span><br><span class="line">counter = <span class="number">100</span>;</span><br><span class="line">counter = <span class="number">32&#x27;h64</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串表示方法"><a href="#字符串表示方法" class="headerlink" title="字符串表示方法"></a>字符串表示方法</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span> </span><br><span class="line">    str = <span class="string">&quot;www.run.com&quot;</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-verilog数据类型"><a href="#2-verilog数据类型" class="headerlink" title="2.verilog数据类型"></a>2.verilog数据类型</h2><h3 id="线网wire"><a href="#线网wire" class="headerlink" title="线网wire"></a>线网wire</h3><p>wire 类型表示硬件单元之间的物理连线，由其连接的器件输出端连续驱动。如果没有驱动元件连接到 wire 型变量，缺省值一般为 “Z”。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">wire</span> interrupt;</span><br><span class="line"><span class="keyword">wire</span> flag1, flag2;</span><br><span class="line"><span class="keyword">wire</span> gnd = <span class="number">1&#x27;b0</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="寄存器reg"><a href="#寄存器reg" class="headerlink" title="寄存器reg"></a>寄存器reg</h3><p>寄存器（reg）用来表示存储单元，它会保持数据原有的值，直到被改写。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span> clk_tmp;</span><br><span class="line"><span class="keyword">reg</span> flag1, falg2;</span><br></pre></td></tr></table></figure>
+
+<h3 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h3><p>当位宽大于1时，可将wire和reg声明为向量的形式</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]      counter ;    <span class="comment">//声明4bit位宽的寄存器counter</span></span><br><span class="line"><span class="keyword">wire</span> [<span class="number">32</span>-<span class="number">1</span>:<span class="number">0</span>]  gpio_data;   <span class="comment">//声明32bit位宽的线型变量gpio_data</span></span><br><span class="line"><span class="keyword">wire</span> [<span class="number">8</span>:<span class="number">2</span>]     addr ;       <span class="comment">//声明7bit位宽的线型变量addr，位宽范围为8:2</span></span><br><span class="line"><span class="keyword">reg</span> [<span class="number">0</span>:<span class="number">31</span>]     data ;       <span class="comment">//声明32bit位宽的寄存器变量data, 最高有效位为0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>]     data1 ;</span><br><span class="line"><span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]      byte1 [<span class="number">7</span>:<span class="number">0</span>]; <span class="comment">//相当于二维数组</span></span><br><span class="line"><span class="keyword">integer</span> j ;</span><br><span class="line"><span class="keyword">always</span>@* <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">for</span> (j=<span class="number">0</span>; j&lt;=<span class="number">3</span>;j=j+<span class="number">1</span>) <span class="keyword">begin</span></span><br><span class="line">        byte1[j] = data1[(j+<span class="number">1</span>)*<span class="number">4</span>-<span class="number">1</span> : j*<span class="number">4</span>];</span><br><span class="line">        <span class="comment">//把data1[7:0]…data1[31:24]依次赋值给byte1[0][7:0]…byte[3][7:0]</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span> </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="整数，实数，时间寄存器变量"><a href="#整数，实数，时间寄存器变量" class="headerlink" title="整数，实数，时间寄存器变量"></a>整数，实数，时间寄存器变量</h3><h4 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h4><p>使用integer，声明时不需要指明位宽，一般为32bit</p>
+<h4 id="实数"><a href="#实数" class="headerlink" title="实数"></a>实数</h4><p>使用real来声明，默认值为0</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">real</span>        data1 ;</span><br><span class="line"><span class="keyword">integer</span>     temp ;</span><br><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">    data1 = <span class="number">2</span>e3 ;</span><br><span class="line">    data1 = <span class="number">3</span><span class="variable">.75</span> ;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">    temp = data1 ; <span class="comment">//temp 值的大小为3,将实数赋值给整数，只会将整数部分赋值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="time"><a href="#time" class="headerlink" title="time"></a>time</h4><p>对仿真时间进行保存，宽度一般为64bit，通过调用系统函数$time来获取当前仿真时间</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">time</span>       current_time ;</span><br><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">       #<span class="number">100</span> ;</span><br><span class="line">       current_time = <span class="built_in">$time</span> ; <span class="comment">//current_time 的大小为 100</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在 Verilog 中允许声明 reg, wire, integer, time, real 及其向量类型的数组。</p>
+<p>数组维数没有限制。线网数组也可以用于连接实例模块的端口。数组中的每个元素都可以作为一个标量或者向量，以同样的方式来使用</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">integer</span>          flag [<span class="number">7</span>:<span class="number">0</span>] ; <span class="comment">//8个整数组成的数组</span></span><br><span class="line"><span class="keyword">reg</span>  [<span class="number">3</span>:<span class="number">0</span>]       counter [<span class="number">3</span>:<span class="number">0</span>] ; <span class="comment">//由4个4bit计数器组成的数组</span></span><br><span class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>]       addr_bus [<span class="number">3</span>:<span class="number">0</span>] ; <span class="comment">//由4个8bit wire型变量组成的数组</span></span><br><span class="line"><span class="keyword">wire</span>             data_bit[<span class="number">7</span>:<span class="number">0</span>][<span class="number">5</span>:<span class="number">0</span>] ; <span class="comment">//声明1bit wire型变量的二维数组</span></span><br><span class="line"><span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>]       data_4d[<span class="number">11</span>:<span class="number">0</span>][<span class="number">3</span>:<span class="number">0</span>][<span class="number">3</span>:<span class="number">0</span>][<span class="number">255</span>:<span class="number">0</span>] ; <span class="comment">//声明4维的32bit数据变量数组</span></span><br></pre></td></tr></table></figure>
+
+<p>对数组元素赋值操作</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flag [<span class="number">1</span>]   = <span class="number">32&#x27;d0</span> ; <span class="comment">//将flag数组中第二个元素赋值为32bit的0值</span></span><br><span class="line">counter[<span class="number">3</span>] = <span class="number">4&#x27;hF</span> ;  <span class="comment">//将数组counter中第4个元素的值赋值为4bit 十六进制数F，等效于counter[3][3:0] = 4&#x27;hF，即可省略宽度;</span></span><br><span class="line"><span class="keyword">assign</span> addr_bus[<span class="number">0</span>]        = <span class="number">8&#x27;b0</span> ; <span class="comment">//将数组addr_bus中第一个元素的值赋值为0</span></span><br><span class="line"><span class="keyword">assign</span> data_bit[<span class="number">0</span>][<span class="number">1</span>]     = <span class="number">1&#x27;b1</span>;  <span class="comment">//将数组data_bit的第1行第2列的元素赋值为1，这里不能省略第二个访问标号，即 assign data_bit[0] = 1&#x27;b1; 是非法的。</span></span><br><span class="line">data_4d[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">15</span>:<span class="number">0</span>] = <span class="number">15&#x27;d3</span> ;  <span class="comment">//将数组data_4d中标号为[0][0][0][0]的寄存器单元的15~0bit赋值为3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>使用关键字parameter声明，只能赋值一次</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串保存在 reg 类型的变量中，每个字符占用一个字节（8bit）。因此寄存器变量的宽度应该足够大，以保证不会溢出。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">0</span>: <span class="number">14</span>*<span class="number">8</span>-<span class="number">1</span>]       str ;</span><br><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">    str = <span class="string">&quot;run.runoob.com&quot;</span>;</span><br><span class="line"><span class="keyword">end</span>  </span><br></pre></td></tr></table></figure>
+
+<h2 id="3-编译指令"><a href="#3-编译指令" class="headerlink" title="3.  编译指令"></a>3.  编译指令</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">define</span>用来宏定义</span></span><br><span class="line"><span class="meta">`<span class="meta-keyword">undef</span>用来取消宏定义</span></span><br><span class="line"><span class="meta">`<span class="meta-keyword">include</span>用来将一个文件内嵌大豆另一个Verilog文件中</span></span><br><span class="line"><span class="meta">`timecase也用来定义时延，仿真的单位和精度</span></span><br><span class="line"><span class="comment">//未完待续</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-连续赋值"><a href="#4-连续赋值" class="headerlink" title="4.连续赋值"></a>4.连续赋值</h2><p>用于对wire型变量进行赋值</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assign</span>     LHS_target = RHS_expression  ；</span><br><span class="line"><span class="comment">//assign 为关键词，任何已经声明 wire 变量的连续赋值语句都是以 assign 开头</span></span><br><span class="line"><span class="keyword">wire</span>      Cout, A, B ;</span><br><span class="line"><span class="keyword">assign</span>    Cout  = A &amp; B ; </span><br><span class="line"><span class="comment">//wire型变量只能被赋值一次，因此可以在声明的同时进行初始化</span></span><br><span class="line"><span class="keyword">wire</span> A, B;</span><br><span class="line"><span class="keyword">wire</span> cont = A &amp; B;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/04/verilog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法设计与分析作业" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>算法设计与分析作业</p>
+<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p><strong>算法思想</strong></p>
+<p>使用归并排序，将数字放在数组中并且从（l+r）/2位置分开，那么对于明显倒置的情况只有三种</p>
+<p>左半部分数组有两个数满足明显倒置</p>
+<p>右半部分数组有两个数满足明显倒置</p>
+<p>左半部分数组一个数与右半部分数组一个数满足明显倒置</p>
+<p>在进行归并排序的同时去寻找左右两部分中满足明显倒置的个数，最后左右两部分都满足从小到大排序</p>
+<p>递归解决前两种情况的时间复杂度为O(logn)，则需要在时间复杂度O(n)内解决第三种情况</p>
+<p>此时遍历左半部分数组元素，右半部分有满足明显倒置的第一个数的右边所有数字都满足明显倒置</p>
+<p><strong>伪代码</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">array</span>, left, mid, right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> end[];<span class="comment">//建立一个新数组</span></span><br><span class="line">    <span class="keyword">int</span> i=left;</span><br><span class="line">    <span class="keyword">int</span> j=right;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;mid &amp;&amp; j&lt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">array</span>[i]&lt;<span class="built_in">array</span>[j])</span><br><span class="line">            end[p++] = <span class="built_in">array</span>[i++];</span><br><span class="line">        <span class="keyword">else</span> 明显倒置数++；</span><br><span class="line">            end[p++] = <span class="built_in">array</span>[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(左半部分剩余)</span><br><span class="line">        将左半部分放入end数组末尾</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        将右半部分放入end数组末尾</span><br><span class="line">    最后将end复制到<span class="built_in">array</span>数组   	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> mergesort(<span class="built_in">array</span>, left, right)</span><br><span class="line">&#123;</span><br><span class="line">    mid = (right+left)/<span class="number">2</span>;</span><br><span class="line">    mergesort(<span class="built_in">array</span>, left, mid);</span><br><span class="line">    mergesort(<span class="built_in">array</span>, mid+<span class="number">1</span>, right);</span><br><span class="line">    merge(<span class="built_in">array</span>, left, mid, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>分析时间复杂度</strong></p>
+<p>T(n) = 2T(n/2)+n = 2^log2nT(1)+nlog2n</p>
+<p>T(n) = O(nlogn)</p>
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p><strong>算法思想</strong></p>
+<p>该问题与背包问题类似，唯一不同的是每个物品的个数是无限的</p>
+<p>设置一个数组为dis[i][j]表示撞到第i个物品且背包容量剩余j时，背包中的总价值</p>
+<p>w[]数组存放每个物品重量且w[0]为0</p>
+<p>v[]数组存放每个物品价值且v[0]为0</p>
+<p>然后开始更新数组dis[i][j]</p>
+<p>使用动态规划计算<strong>dis[i] [j] = max(dis[i-1] [j], dis[i] [j-w[i]] + v[i])</strong> (与01背包不同的是可装入无数个i个物品)</p>
+<p><strong>伪代码</strong></p>
+<p>先将物品0所在行与容量0所在列全部初始化为0，先将物品1所在行更新</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;物品种类数; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=背包容量; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(背包容量&lt;物品重量)</span><br><span class="line">            dis[i][j] = dis[i<span class="number">-1</span>][j];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            dis[i] [j] = max(dis[i<span class="number">-1</span>] [j], dis[i] [j-w[i]] + v[i]) </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>时间复杂度</strong></p>
+<p>两层循环，m为背包容量，n为物品个数，时间复杂度为O(m*n)</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><p><strong>算法思想</strong></p>
+<p>类似floyd算法，只不过将最短路径变成了最长路径</p>
+<p>两个二维数组，其中一个装着从节点i-&gt;j的最长路径，初始化为各节点长度最大的入度节点，且两者之间无边则设置为负无穷，另一个数组装着从i-&gt;j中最长路径中第一个中间节点</p>
+<p>然后将每一个节点都作为中间节点对i和j进行遍历</p>
+<p>若dis[i] [j] &lt; dis[i] [k] + dis[k] [j]则更新数组</p>
+<p>dis[i] [j] = dis[i] [k] + dis[k] [j]</p>
+<p>另一个数组A[i] [j] =k 表示i-&gt;k-&gt;j为距离最远</p>
+<p><strong>伪代码</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(k=<span class="number">0</span>; k&lt;节点数; k++)</span><br><span class="line">            <span class="keyword">if</span>(dis[s][t] &lt; dis[s][k] + dis[k][t])</span><br><span class="line">            &#123;</span><br><span class="line">                dis[s][t] = dis[s][k] + dis[k][t];</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>时间复杂度</strong></p>
+<p>只有一层循环，但初始化数组所需时间复杂度更大，时间复杂度是O(n^2)</p>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><p><img src="C:\Users\86178\AppData\Roaming\Typora\typora-user-images\image-20211104105856810.png" alt="image-20211104105856810"></p>
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><p><img src="C:\Users\86178\AppData\Roaming\Typora\typora-user-images\image-20211104105927828.png" alt="image-20211104105927828"></p>
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><p><strong>算法思路</strong></p>
+<p>首先对黑点以x坐标的升序进行排序，然后对白点建立小根堆，先从X坐标最小的黑点开始匹配，搜素白点的小根推，找Y坐标离当前黑点最近的那个。当前匹配的所有白点X坐标都符合后面的黑点，所以我们要尽可能的找Y坐标最大的白点与当前黑点匹配。显而易见，当我们把符合条件中的白点中，匹配Y坐标最大的白点，相当于前面的黑点尽可能挑可选范围内最硬的骨头，那么后面的黑点匹配的可能性最大。在这里一共有n个黑点，循环n次就能找到所有匹配的点和最大匹配对数了。</p>
+<p><strong>伪代码</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">对白点以x建立小根堆</span><br><span class="line">qsort(black[], n, <span class="keyword">sizeof</span>(black), campare);<span class="comment">//对黑点以x进行升序排序</span></span><br><span class="line"><span class="comment">//匹配函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">match</span><span class="params">(point *b, point *w, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> wn = n, bn = n;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>,count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; bn; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//int j = 0;</span></span><br><span class="line">		<span class="keyword">int</span> answer = Find_MinHeap(w, b[i], <span class="number">0</span>, wn);</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">if</span> (answer != <span class="number">-1</span>)  <span class="comment">//成功找到合适的w点</span></span><br><span class="line">		&#123;</span><br><span class="line">			count++;  <span class="comment">//计数器</span></span><br><span class="line"></span><br><span class="line">			DeleteMinHeap(w, answer, &amp;wn);   <span class="comment">//删除W[answer]</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>时间复杂度</strong></p>
+<p>快排时间复杂度为O(nlogn),小根堆为O(logn),匹配函数为遍历n次，所以时间复杂度为O(nlogn)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/03/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E4%BD%9C%E4%B8%9A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -580,7 +929,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 Ivans fault
+    		&copy; 2022 Ivans fault
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
